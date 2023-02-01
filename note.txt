@@ -1,0 +1,68 @@
+api call in js
+.................
+AJAX
+
+-XMLhttp
+-fetch
+-asynch await
+
+-useEffect - is used to show data when the page opens
+
+Redirection in react
+...........................
+react-router-dom
+  npm i react-router-dom
+
+import {BrowserRouter as Router - all routing needed components
+,Routes                         - to set path for each components
+,Route                          - used when there is more than one path
+} from 'react-router-dom' 
+
+useParams - hook used to access params from components url
+
+REDUX
+.........
+
+Coupling-many connection btw parent and child components
+
+props drilling-if Coupling increases ,in Coupling if any intermediate components have any errors all other child will not work 
+
+-to avoid props drilling .we need to reduse Coupling and make all the components independent
+-For this react introduced a new technology -state management technology called REDUX
+
+Redux process
+.................
+-create a new js file to keep the state,all the components can access the js file
+-components can only access datas from the js file but it can't update datas in the js file
+
+-Action ->a file where all the logic to update the state
+-Dispatch-> method used to Dispatch logic in action file when the component need state updation
+-Reduser -> update the datas in js file acoording to the  payload responce get from the action file
+
+Library to apply Redux
+.........................
+1-REDUX
+2-REACT REDUX
+3-REDUX-THUNK
+    npm i redux react-redux redux-thunk
+
+createStore() - method used to create store in js file
+              - 2 arguments 
+                -reducer 
+                -middleware - used to make synchronous redux in to asynchronus
+applyMiddleware - method in REDUX to apply middleware 
+
+combineRedusers()- method in redux used to combine all the the redusers in js file
+
+thunk()- in redux-thunk used to create middleware
+
+1.create store
+2.apply the store in index.js
+    -provider - its a tag used to pass the store (react-redux)
+
+AXIOS - module used for http methods(api call)
+  npm i axions
+
+useDispatch- used to Dispatch actions in components -react-redux
+
+-to access datas from store to component - useSelector -hook
