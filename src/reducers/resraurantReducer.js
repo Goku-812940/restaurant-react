@@ -1,8 +1,8 @@
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
+
 import { R_FAIL,R_SUCCESS   } from "../constants/restaurantConstants";
 
 // reducer fn
-const restaurantLiatReducer=(state={restaurantList:[]},action)=>{
+export const restaurantListReducer=(state={restaurantList:[]},action)=>{
     switch(action.type){
         case R_SUCCESS:
             return{restaurantList:action.payload}
@@ -12,3 +12,4 @@ const restaurantLiatReducer=(state={restaurantList:[]},action)=>{
             return state
     }
 }
+

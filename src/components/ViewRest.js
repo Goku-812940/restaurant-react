@@ -5,32 +5,38 @@ import Container from 'react-bootstrap/Container';
 import {Image,Button} from 'react-bootstrap';
 import Operatingtime from './Operatingtime';
 import Review from './Review';
+import { useDispatch,useSelector } from 'react-redux';
 
 function ViewRest() {
 
   const params=useParams()
-  console.log(params.id);
+  // console.log(params.id);
 
  
-    const [allrestautant, setallrestaurant] = useState([])
+  //   const [allrestautant, setallrestaurant] = useState([])
   
-    // function to api call for datas iside json file
+  //   // function to api call for datas iside json file
   
-    const restaurantdata = async () => {
-      await fetch('/restaurants.json').then(data => {
-        data.json().then(result => {
-          // console.log(result);
-          setallrestaurant(result.restaurants)
+  //   const restaurantdata = async () => {
+  //     await fetch('/restaurants.json').then(data => {
+  //       data.json().then(result => {
+  //         // console.log(result);
+  //         setallrestaurant(result.restaurants)
   
-        })
-      })
-    }
-    const restdata= allrestautant.find(item=>item.id==params.id)
-    console.log(restdata);
+  //       })
+  //     })
+  //   }
+    
   
     useEffect(() => {
-      restaurantdata()
+      // restaurantdata()
     }, [])
+
+    const result=useSelector(state=>state.restaurantReducer)
+const {restaurantList}=result
+
+const restdata= restaurantList.find(item=>item.id==params.id)
+    console.log(restdata);
 
 
   return (
